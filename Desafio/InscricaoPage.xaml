@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Desafio.InscricaoPage"
+             Title="Inscrição">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding NomeEvento}" TextColor="#34DE0D" FontSize="25" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="{Binding LocalEvento}" FontSize="16" VerticalTextAlignment="Center"/>
+                        <Label Text=" - " FontSize="16"/>
+                        <Label Text="{Binding DataEvento, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="CENTER CONVENTION" FontSize="16" VerticalTextAlignment="Center"/>
+                        <Label Text=" - " FontSize="16"/>
+                        <Label Text="{Binding DataEvento, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16"/>
+                    </StackLayout>
+                </StackLayout>
+                
+                <StackLayout Padding="30" Spacing="2" VerticalOptions="StartAndExpand"
+                     HorizontalOptions="FillAndExpand">
+                    <Label Text="Nome" TextColor="#555" FontSize="20" FontAttributes="Bold"/>
+                    <Entry  Keyboard="Default" Placeholder="Digite aqui seu nome" PlaceholderColor="#CCC" 
+                            FontSize="20" TextColor="#555"/>
+                    <Label Text="E-mail" TextColor="#555" FontSize="20" FontAttributes="Bold"/>
+                    <Entry  Keyboard="Email" Placeholder="Digite aqui seu e-mail" PlaceholderColor="#CCC" 
+                            FontSize="20" TextColor="#555"/>
+                    <Label Text="Telefone" TextColor="#555" FontSize="20" FontAttributes="Bold"/>
+                    <Entry  Keyboard="Numeric" Placeholder="Digite aqui seu telefone" PlaceholderColor="#CCC" 
+                            FontSize="20" TextColor="#555"/>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                        <Label Text="Conhecimento sobre o tema? " TextColor="#555" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <Switch IsToggled="False" VerticalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                
+            </StackLayout>
+
+            <StackLayout Padding="30" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+                <Button x:Name="BtnInscricao" Text="Inscrever-me" TextColor="White" BorderColor="#CB9600" BackgroundColor="#34DE0D" Clicked="BtnInscricao_Clicked"/>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Desafio.ListaEvento"
+             Title="Eventos Everis">
+    
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="5" Color="Black"/>
+                <ListView x:Name="ListaEventos"
+                          ItemsSource="{Binding ListaDeEventos}"
+                          CachingStrategy="RecycleElement"
+                          HasUnevenRows="True" Margin="25"
+                          ItemSelected="ListaEventos_ItemSelected"
+                          ItemTapped="ListaEventos_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="everis_logo.jpeg"/>
+                                    <StackLayout Orientation="Vertical" >
+                                        <Label Text="{Binding NomeEvento}" FontSize="20" FontAttributes="None"  VerticalTextAlignment="Center"></Label>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding LocalEvento}" FontSize="12" FontAttributes="None" VerticalTextAlignment="Center"></Label>
+                                            <Label Text=" - " VerticalTextAlignment="Center"></Label>
+                                            <Label Text="{Binding DataEvento, StringFormat='{0:dd/MM}'}" FontSize="12" FontAttributes="None" VerticalTextAlignment="Center"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Padding="30" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+                <Button x:Name="BtnNovo" Text="Novo Evento" TextColor="White" BorderColor="#CB9600" BackgroundColor="#34DE0D" Clicked="BtnNovo_Clicked"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>
